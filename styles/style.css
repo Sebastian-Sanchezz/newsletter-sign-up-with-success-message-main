@@ -1,0 +1,22 @@
+.fondo {
+    background-image: url('../assets/images/illustration-sign-up-mobile.svg');
+    height: 280px;
+    background-repeat: no-repeat;
+}
+
+.lista li{
+    display: inline-flex;
+    gap: 10px;
+}
+.lista li img {
+    width: 20px;
+}
+
+
+@media screen and (min-width: 768px) {
+    .fondo {
+        background-image: url('../../assets/images/illustration-sign-up-desktop.svg');
+        height: 580px;
+        border-radius: 15px;
+    }
+}

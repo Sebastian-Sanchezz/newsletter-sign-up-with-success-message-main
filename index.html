@@ -1,45 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <title>Newsletter sign-up form with success message</title>
+  <link rel="stylesheet" href="./styles/style.css">
   <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 </head>
-<body>
+<body class="bg-gray-900 flex justify-center">
+  <main>
+    <section class="bg-white md:grid md:grid-cols-2 md:max-w-[928px] md:p-6 md:rounded-3xl md:gap-8 md:items-center" id="contenedor-formulario">
+      <div class="md:order-2">
+        <img src="./assets/images/illustration-sign-up-mobile.svg" alt="illustration-sign-up-mobile" class="w-full md:hidden">
+        <img src="./assets/images/illustration-sign-up-desktop.svg" alt="illustration-sign-up-desktop" class="hidden md:block md:w-full">
+      </div>
+    
+      <div class="p-6 md:p-8 space-y-6">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900">Stay updated!</h2>
+        <p class="text-base text-gray-700">Join 60,000+ product managers receiving monthly updates on:</p>
+        
+        <ul class="space-y-4">
+          <li class="flex items-start gap-4">
+            <img src="./assets/images/icon-success.svg" alt="icon-success" class="w-5 h-5 mt-1">
+            <span>Product discovery and building what matters</span>
+          </li>
+          <li class="flex items-start gap-4">
+            <img src="./assets/images/icon-success.svg" alt="icon-success" class="w-5 h-5 mt-1">
+            <span>Measuring to ensure updates are a success</span>
+          </li>
+          <li class="flex items-start gap-4">
+            <img src="./assets/images/icon-success.svg" alt="icon-success" class="w-5 h-5 mt-1">
+            <span>And much more!</span>
+          </li>
+        </ul>
+    
+        <form class="flex flex-col gap-4" id="form-subscribe">
+          <div class="flex flex-col gap-2">
+            <label for="email" class="text-xs font-bold text-gray-900">Email address</label>
+            <input 
+              type="email" 
+              name="email" 
+              id="correo-formulario"
+              placeholder="email@company.com"
+              class="border border-gray-300 rounded-lg px-6 py-4 focus:outline-none focus:border-gray-900"
+            />
+          </div>
+          <button 
+            type="submit" 
+            class="w-full bg-gray-900 text-white font-bold py-4 rounded-lg hover:bg-gradient-to-r from-pink-500 to-orange-500 transition-all duration-300">
+            Subscribe to monthly newsletter
+          </button>
+        </form>
+      </div>
+    </section>
 
-  <!-- Sign-up form start -->
+    <section class="bg-white h-screen md:h-full md:w-[504px] md:h-auto hidden flex-col justify-between p-6 md:p-12 md:rounded-3xl md:shadow-lg" id="contenedor-exito">
+      <div class="space-y-4 md:space-y-7 mt-[60px] md:mt-0">
+        <img src="./assets/images/icon-success.svg" alt="icon-success" class="w-[64px] h-[64px]" />
+        <h2 class="text-[40px] md:text-[45px] leading-[1.1] font-bold text-gray-900">Thanks for subscribing!</h2>
+        <p class="text-base text-gray-700">
+          A confirmation email has been sent to 
+          <span id="correo-suscripcion" class="font-bold text-gray-900"></span>.
+          Please open it and click the button inside to confirm your subscription.
+        </p>
+      </div>
+      
+      <button 
+        class="mt-5 w-full bg-gray-900 text-white font-bold py-4 rounded-lg hover:bg-gradient-to-r from-pink-500 to-orange-500 transition-all duration-300" 
+        id="btn-ocultar">
+        Dismiss message
+      </button>
+    </section>
+  </main>
 
-  Stay updated!
-
-  Join 60,000+ product managers receiving monthly updates on:
-
-  Product discovery and building what matters
-  Measuring to ensure updates are a success
-  And much more!
-
-  Email address
-  email@company.com
-
-  Subscribe to monthly newsletter
-
-  <!-- Sign-up form end -->
-
-  <!-- Success message start -->
-
-  Thanks for subscribing!
-
-  A confirmation email has been sent to ash@loremcompany.com. 
-  Please open it and click the button inside to confirm your subscription.
-
-  Dismiss message
-
-  <!-- Success message end -->
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+  <script src="./js/script.js"></script>
 </body>
+
 </html>
